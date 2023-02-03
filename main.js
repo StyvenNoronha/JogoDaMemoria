@@ -1,13 +1,17 @@
+import "./src/styles/elements/base.css"
+import "./src/styles/settings/colors.css"
+import "./src/styles/generic/reset.css"
 
+import BoardGame from "./src/objects/BoardGame"
+import PlayerGame from "./src/components/PlayerName"
 
-import './src/styles/elements/base.css'
-import './src/styles/settings/colors.css'
-import './src/styles/generic/reset.css'
-
-
-import BoardGame from './src/objects/BoardGame'
 const root = document.querySelector("#root")
-const htmlBoardGame = BoardGame(3)
 
-
-root.insertAdjacentHTML("beforeend", htmlBoardGame)
+root.insertAdjacentHTML(
+  "beforeend",
+  `
+${PlayerGame("Player 1")}
+${PlayerGame("Player 2")}
+${BoardGame(6)}
+`
+)
